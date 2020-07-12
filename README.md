@@ -3,6 +3,10 @@ Tools for creating customised RISC OS 3 ROM images.
 
 Phil Pemberton, philpem@gmail.com
 
+## Requirements
+
+You will need the "srecord" tools installed
+
 
 ## Tools included
 
@@ -11,6 +15,17 @@ Phil Pemberton, philpem@gmail.com
 * merge.sh: Convert a 4-file emulator-format RISC OS ROM image into a single file.
 * pad4mb.sh: Pad a ROM image to 4MB without fixing checksums
 * stripe.sh: Take a 2MB or 4MB ROM image and create a High and Low stripe image which may be programmed into a pair of M27C160-100 EPROMs.
+
+
+## Typical workflow
+
+- Generate a ROM image
+- Use `pad4mb.sh` to pad it to 4MB
+- Use `patchsum` to fix the checksum and ROM size header
+- Test it in Arculator
+- Use `stripe.sh` to create images to program into 16-bit EPROMs
+- Program some EPROMs and test them
+
 
 ## EPROM compatibility
 
