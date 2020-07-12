@@ -68,6 +68,15 @@ int main(int argc, char **argv)
 	size_t romsize = ftell(fp);
 	fseek(fp, 0, SEEK_SET);
 
+	// Check ROM size is a multiple of the RISC OS word size
+	if ((romsize % 4) != 0) {
+		fprintf(stderr,
+				"Input file length is not a multple of 4.\n"
+				"The ROM file must be padded to a multiple of 4 bytes, with a minimum of\n"
+				"12 spare bytes at the EOF for the checksums.\n");
+		return -1;
+	}
+
 	//
 	// The RISC OS ROM starts with a header which looks like this:
 	//
