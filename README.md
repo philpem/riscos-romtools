@@ -1,2 +1,23 @@
 # riscos-romtools
-Tools for creating custom RISC OS 3 ROM images
+Tools for creating customised RISC OS 3 ROM images.
+
+Phil Pemberton, philpem@gmail.com
+
+
+## Tools included
+
+* checksum (C program): Checks the RISC OS ROM checksum trailer (Additive sum and CRCs) and reports on its correctness.
+* patchsum (C program): Fixes the ROM header (ROM length word) and trailer (checksums).
+* merge.sh: Convert a 4-file emulator-format RISC OS ROM image into a single file.
+* pad4mb.sh: Pad a ROM image to 4MB without fixing checksums
+* stripe.sh: Take a 2MB or 4MB ROM image and create a High and Low stripe image which may be programmed into a pair of M27C160-100 EPROMs.
+
+## EPROM compatibility
+
+The RISC OS 3.11 ROM (2MB) may be programmed into a pair of STMicroelectronics M27C800-100 DIP-package 42-pin EPROMs.
+
+If a custom ROM is created which requires a 4MB ROM, a pair of STMicroelectronics M27C160-100 DIP-package 42-pin EPROMs may be used.
+
+## Caveats
+
+While the ARM250-based machines can boot a 4MB ROM, it will not be possible to use the Self-Test header (POST Box) to debug them. Attempting to do so will result in a ROM Checksum Error, however the machine will likely still boot (after blinking out the error code).
