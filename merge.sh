@@ -1,0 +1,3 @@
+#!/bin/bash -xe
+
+cat IC24.ROM IC25.ROM IC26.ROM IC27.ROM > RO311
