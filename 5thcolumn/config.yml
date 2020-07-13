@@ -1,0 +1,14 @@
+# rom size in kbytes. 64K = 27C512
+romsize: 64 # KiB
+buswidth: 8
+manufacturer: 0
+
+manufacturerData:
+    description: 'IDE Interface'
+
+modules:
+    - "idefiler_3v15.module"
+    - "idefs_3v15.module"
+#    - "iic_0v13.module"
+#    - "batmgr_0v11.module"
+
