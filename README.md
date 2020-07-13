@@ -5,11 +5,17 @@ Phil Pemberton, philpem@gmail.com
 
 If you do anything cool with this, please send me an email!
 
+
 ## Requirements
 
 You will need the "srecord" tools.
 
 The Python scripts require Python 3. `mkrom.py` also requires the Python 3 `yaml` module.
+
+
+## TODO
+
+* Extend `mkrom.py` to create Podule ROMs.
 
 
 ## Tools included
